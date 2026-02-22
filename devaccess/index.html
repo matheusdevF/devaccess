@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevAccess | Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+  <div class="card">
+    <header class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <h1>DevAccess</h1>
+      <p>Entre para acessar a área restrita</p>
+    </header>
+
+    <form id="loginForm">
+  <div class="field">
+    <span class="label">Usuário</span>
+    <input type="text" id="usuario" placeholder="Ex: matheus" required>
+  </div>
+
+  <div class="field">
+    <span class="label">Senha</span>
+    <input type="password" id="senha" placeholder="••••" required>
+  </div>
+
+  <div class="row">
+    <label class="check">
+      <input type="checkbox" id="mostrarSenha">
+      <span>Mostrar senha</span>
+    </label>
+
+    <a class="small" href="#" onclick="return false;">Esqueci a senha</a>
+  </div>
+
+  <button type="submit" id="btnEntrar">Entrar</button>
+  <p id="erro"></p>
+
+  <div class="footer">© MatheusDevF</div>
+</form>
+
+<script src="script.js"></script>
+
+  
+</body>
+</html>

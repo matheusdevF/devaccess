@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevAccess | Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+  <div class="card dashboard">
+    <div class="badge">✅ Acesso liberado</div>
+
+    <h1 class="dashboard-title">
+  Bem-vindo, <span id="nomeUsuario"></span> 👨‍💻
+</h1>
+    <p>Você entrou com sucesso. Aqui pode ficar um painel com conteúdos, atalhos e dados (a gente evolui depois).</p>
+
+    <button onclick="logout()">Sair</button>
+    <!-- Info rápida -->
+<div class="dash-meta">
+  <span id="dashDate">📅 --/--/----</span>
+  <span id="dashTime">🕒 --:--</span>
+</div>
+
+<!-- Atalhos -->
+<div class="dash-grid">
+  <a class="dash-card" href="#" id="btnPerfil">
+    <h3>👤 Meu perfil</h3>
+    <p>Ver informações e status.</p>
+  </a>
+
+  <a class="dash-card" href="#" id="btnProjetos">
+    <h3>📁 Meus projetos</h3>
+    <p>Acessar links e demos.</p>
+  </a>
+
+  <a class="dash-card" href="#" id="btnConfig">
+    <h3>⚙️ Configurações</h3>
+    <p>Preferências do painel.</p>
+  </a>
+
+  <a class="dash-card" href="#" id="btnAjuda">
+    <h3>❓ Ajuda</h3>
+    <p>Dicas e próximos passos.</p>
+  </a>
+</div>
+
+<!-- Ações -->
+<div class="dash-actions">
+  <a class="dash-btn secondary" href="https://SEU-LINK-DO-PORTFOLIO-AQUI" target="_blank">
+    Voltar pro Portfólio
+  </a>
+
+  <a class="dash-btn" href="https://SEU-LINK-DO-GITHUB-DO-PROJETO-AQUI" target="_blank">
+    Ver código no GitHub
+  </a>
+</div>
+
+    <div class="footer">DevAccess • Projeto de estudo</div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+/* ============ Reset básico ============ */
+* { box-sizing: border-box; }
+
+:root{
+  --bg1:#0b1020;
+  --bg2:#0e1630;
+  --card: rgba(255,255,255,.06);
+  --border: rgba(255,255,255,.12);
+  --text: #eaf0ff;
+  --muted: rgba(234,240,255,.72);
+  --primary: #38bdf8;
+  --danger: #ff6b6b;
+  --shadow: 0 18px 60px rgba(0,0,0,.45);
+  --radius: 18px;
+}
+
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(900px 500px at 12% 12%, rgba(56,189,248,.18), transparent 60%),
+    radial-gradient(800px 520px at 88% 20%, rgba(106,92,255,.22), transparent 55%),
+    radial-gradient(900px 600px at 50% 95%, rgba(34,197,94,.12), transparent 60%),
+    linear-gradient(135deg, var(--bg1), var(--bg2));
+}
+
+/* ============ Layout ============ */
+.container{
+  width: min(420px, 92%);
+  padding: 20px 0;
+}
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* brilho decorativo */
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-120px -120px auto auto;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(56,189,248,.25), transparent 60%);
+  filter: blur(2px);
+}
+.card::after{
+  content:"";
+  position:absolute;
+  inset:auto auto -140px -140px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(106,92,255,.22), transparent 60%);
+  filter: blur(2px);
+}
+
+/* ============ Cabeçalho ============ */
+.brand{
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.logo{
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 10px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(56,189,248,.9), rgba(106,92,255,.9));
+  box-shadow: 0 12px 30px rgba(56,189,248,.18);
+  border: 1px solid rgba(255,255,255,.18);
+}
+
+.brand h1{
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: .4px;
+}
+
+.brand p{
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ============ Form ============ */
+form{
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 12px;
+}
+
+.field{
+  display: grid;
+  gap: 8px;
+}
+
+.label{
+  font-size: 12px;
+  color: var(--muted);
+}
+
+input{
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(10,16,32,.35);
+  color: var(--text);
+  outline: none;
+  transition: border .2s, transform .06s, background .2s;
+}
+
+input::placeholder{
+  color: rgba(234,240,255,.45);
+}
+
+input:focus{
+  border-color: rgba(56,189,248,.65);
+  background: rgba(10,16,32,.55);
+}
+
+.row{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.small{
+  font-size: 12px;
+  color: rgba(234,240,255,.6);
+  text-decoration: none;
+}
+
+.small:hover{
+  color: rgba(234,240,255,.9);
+  text-decoration: underline;
+}
+
+button{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: linear-gradient(135deg, rgba(56,189,248,.95), rgba(106,92,255,.95));
+  color: #061018;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .08s, filter .2s;
+  box-shadow: 0 14px 30px rgba(56,189,248,.16);
+}
+
+button:hover{ filter: brightness(1.05); }
+button:active{ transform: translateY(1px); }
+
+#erro{
+  margin: 0;
+  color: var(--danger);
+  font-size: 13px;
+  min-height: 18px; /* evita “pular” layout */
+}
+
+/* ============ Dashboard ============ */
+.dashboard-title{
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+.dashboard p{
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.badge{
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(10,16,32,.35);
+  color: rgba(234,240,255,.9);
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+
+.footer{
+  margin-top: 14px;
+  text-align: center;
+  color: rgba(234,240,255,.55);
+  font-size: 12px;
+}
+
+/* Checkbox bonitinho */
+.check{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(234,240,255,.75);
+  user-select: none;
+}
+
+.check input{
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--primary);
+}
+
+/* Loading no botão */
+button.is-loading{
+  opacity: .9;
+  pointer-events: none;
+  position: relative;
+}
+
+button.is-loading::after{
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,.25);
+  border-top-color: rgba(0,0,0,.75);
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+  animation: spin .7s linear infinite;
+}
+
+@keyframes spin{
+  to { transform: rotate(360deg); }
+}
+
+/* Fundo animado mais elegante */
+body::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  left: -200px;
+  background: radial-gradient(circle, rgba(56,189,248,0.25), transparent 70%);
+  filter: blur(60px);
+  animation: float1 10s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  bottom: -250px;
+  right: -250px;
+  background: radial-gradient(circle, rgba(106,92,255,0.25), transparent 70%);
+  filter: blur(80px);
+  animation: float2 12s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes float1 {
+  from { transform: translate(0, 0); }
+  to { transform: translate(50px, 40px); }
+}
+
+@keyframes float2 {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-60px, -30px); }
+}
