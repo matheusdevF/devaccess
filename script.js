@@ -1,6 +1,6 @@
-console.log("JS carregou!");
+console.log("SCRIPT CARREGOU ✅");
 
-const usuarioCorreto = "matheus";
+const usuarioCorreto = "teste";
 const senhaCorreta = "1234";
 
 const form = document.getElementById("loginForm");
@@ -17,15 +17,14 @@ if (form) {
       inputSenha.type = mostrarSenha.checked ? "text" : "password";
     });
   }
-
+ 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     erro.textContent = "";
 
     const usuario = document.getElementById("usuario").value.trim();
-    const senha = document.getElementById("senha").value;
-
+    const senha = document.getElementById("senha").value.trim();
     // Loading
     if (btnEntrar) {
       btnEntrar.classList.add("is-loading");
@@ -67,4 +66,51 @@ if (nomeSpan) {
 function logout() {
   localStorage.removeItem("usuarioLogado"); // ✅ limpa login
   window.location.href = "index.html";
+}
+
+// Dashboard extras: saudação, data/hora, contador e última entrada
+if (document.getElementById("nomeUsuario")) {
+  const agora = new Date();
+
+  const h = agora.getHours();
+  const saudacao =
+    h < 12 ? "Bom dia" :
+    h < 18 ? "Boa tarde" :
+    "Boa noite";
+
+  const saudacaoEl = document.getElementById("saudacao");
+  if (saudacaoEl) saudacaoEl.textContent = saudacao;
+
+  const dataHoje = document.getElementById("dataHoje");
+  if (dataHoje) dataHoje.textContent = agora.toLocaleDateString("pt-BR");
+
+  const horaAgora = document.getElementById("horaAgora");
+  if (horaAgora) {
+    const atualizarHora = () => {
+      const d = new Date();
+      horaAgora.textContent = d.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+    };
+    atualizarHora();
+    setInterval(atualizarHora, 1000);
+  }
+
+  // contador de acessos (no navegador)
+  const keyCount = "devaccess_count";
+  const count = Number(localStorage.getItem(keyCount) || "0") + 1;
+  localStorage.setItem(keyCount, String(count));
+
+  const contadorAcessos = document.getElementById("contadorAcessos");
+  if (contadorAcessos) contadorAcessos.textContent = String(count);
+
+  // última entrada
+  const keyLast = "devaccess_last";
+  const ultimo = localStorage.getItem(keyLast);
+  const ultimaEntrada = document.getElementById("ultimaEntrada");
+  if (ultimaEntrada) {
+    ultimaEntrada.textContent = ultimo ? ultimo : "Primeira vez";
+  }
+  const dataFormatada = agora.toLocaleDateString("pt-BR");
+const horaFormatada = agora.toLocaleTimeString("pt-BR");
+
+localStorage.setItem(keyLast, `${dataFormatada} ${horaFormatada}`);
 }

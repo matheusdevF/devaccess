@@ -1,68 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DevAccess | Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="container">
-  <div class="card dashboard">
-    <div class="badge">✅ Acesso liberado</div>
+  <main class="dash">
+    <section class="panel">
 
-    <h1 class="dashboard-title">
-  Bem-vindo, <span id="nomeUsuario"></span> 👨‍💻
-</h1>
-    <p>Você entrou com sucesso. Aqui pode ficar um painel com conteúdos, atalhos e dados (a gente evolui depois).</p>
+      <div class="pill">
+        <span class="dot"></span>
+        <span>Acesso liberado</span>
+      </div>
 
-    <button onclick="logout()">Sair</button>
-    <!-- Info rápida -->
-<div class="dash-meta">
-  <span id="dashDate">📅 --/--/----</span>
-  <span id="dashTime">🕒 --:--</span>
+      <h1 class="title">
+        <span id="saudacao">Bem-vindo</span>, <span id="nomeUsuario">usuário</span> 👨‍💻
+      </h1>
+
+      <p class="subtitle">
+        Você entrou com sucesso. Aqui pode ficar um painel com conteúdos, atalhos e dados.
+      </p>
+
+      <div class="meta">
+        <div class="meta-item">
+          <span class="meta-label">Hoje</span>
+          <span class="meta-value" id="dataHoje">--/--/----</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Agora</span>
+          <span class="meta-value" id="horaAgora">--:--</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Status</span>
+          <span class="meta-value ok">Ativo</span>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card-mini">
+          <p class="mini-label">Acessos</p>
+          <p class="mini-value" id="contadorAcessos">1</p>
+          <p class="mini-hint">Contando este dispositivo</p>
+        </div>
+
+        <div class="card-mini">
+          <p class="mini-label">Última entrada</p>
+          <p class="mini-value" id="ultimaEntrada">Agora</p>
+          <p class="mini-hint">Salvo no navegador</p>
+        </div>
+
+        <div class="card-mini">
+          <p class="mini-label">Projeto</p>
+          <p class="mini-value">DevAccess</p>
+          <p class="mini-hint">Painel de estudo</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn primary" onclick="logout()">Sair</button>
+      </div>
+
+      <p class="foot">DevAccess • Projeto de estudo</p>
+
+    </section>
+    <div class="contact">
+  <p>
+    Desenvolvido por Matheus • 
+    <a href="mailto:seuemail@email.com">chunaimatheus@gmail.com</a>
+  </p>
 </div>
+  </main>
 
-<!-- Atalhos -->
-<div class="dash-grid">
-  <a class="dash-card" href="#" id="btnPerfil">
-    <h3>👤 Meu perfil</h3>
-    <p>Ver informações e status.</p>
-  </a>
-
-  <a class="dash-card" href="#" id="btnProjetos">
-    <h3>📁 Meus projetos</h3>
-    <p>Acessar links e demos.</p>
-  </a>
-
-  <a class="dash-card" href="#" id="btnConfig">
-    <h3>⚙️ Configurações</h3>
-    <p>Preferências do painel.</p>
-  </a>
-
-  <a class="dash-card" href="#" id="btnAjuda">
-    <h3>❓ Ajuda</h3>
-    <p>Dicas e próximos passos.</p>
-  </a>
-</div>
-
-<!-- Ações -->
-<div class="dash-actions">
-  <a class="dash-btn secondary" href="https://SEU-LINK-DO-PORTFOLIO-AQUI" target="_blank">
-    Voltar pro Portfólio
-  </a>
-
-  <a class="dash-btn" href="https://SEU-LINK-DO-GITHUB-DO-PROJETO-AQUI" target="_blank">
-    Ver código no GitHub
-  </a>
-</div>
-
-    <div class="footer">DevAccess • Projeto de estudo</div>
-  </div>
-</div>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>

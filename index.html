@@ -16,15 +16,22 @@
       <p>Entre para acessar a área restrita</p>
     </header>
 
-    <form id="loginForm">
+    <div class="demo-box">
+  <p><strong>Modo demonstração</strong></p>
+  <p>Usuário: <code>teste</code></p>
+  <p>Senha: <code>1234</code></p>
+</div>
+
+    <form id="loginForm" autocomplete="off">
+
   <div class="field">
     <span class="label">Usuário</span>
-    <input type="text" id="usuario" placeholder="Ex: matheus" required>
+    <input type="text" id="usuario" placeholder="Digite seu usuário" required />
   </div>
 
   <div class="field">
     <span class="label">Senha</span>
-    <input type="password" id="senha" placeholder="••••" required>
+    <input type="password" id="senha" placeholder="Digite sua senha" required />
   </div>
 
   <div class="row">
@@ -39,7 +46,6 @@
   <button type="submit" id="btnEntrar">Entrar</button>
   <p id="erro"></p>
 
-  <div class="footer">© MatheusDevF</div>
 </form>
 
 <script src="script.js"></script>
